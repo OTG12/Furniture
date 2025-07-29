@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiShoppingCart, FiHeart, FiEye, FiChevronRight } from 'react-icons/fi';
-import product1 from "../assets/product1.jpg";
-import product2 from "../assets/product2.jpg";
-import product3 from "../assets/product3.jpg";
-import product4 from "../assets/product4.jpg";
+import product1 from "../assets/product1.jpeg";
+import product2 from "../assets/product2.jpeg";
+import product3 from "../assets/product3.jpeg";
+import product4 from "../assets/product4.jpeg";
 
 const arrivals = [
   {
