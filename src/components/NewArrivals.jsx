@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiShoppingCart, FiHeart, FiEye, FiChevronRight } from 'react-icons/fi';
-import product1 from "../assets/product1.png";
-import product2 from "../assets/product2.png";
-import product3 from "../assets/product3.png";
-import product4 from "../assets/product4.png";
+
 
 const arrivals = [
   {
@@ -12,7 +9,7 @@ const arrivals = [
     title: 'Elegant Sofa',
     name: 'LuxeCraft Series',
     price: 799,
-    image: product1,
+    image: 'https://images.unsplash.com/photo-1616627458514-7fc8bd26ecae?auto=format&fit=crop&w=800&q=80',
     isNew: true,
     rating: 4.8,
   },
@@ -21,7 +18,7 @@ const arrivals = [
     title: 'Wooden Chair',
     name: 'NatureRest Armchair',
     price: 249,
-    image: product2,
+    image: 'https://images.unsplash.com/photo-1582582494700-43e6a0125d57?auto=format&fit=crop&w=800&q=80',
     discount: 15,
     rating: 4.5,
   },
@@ -30,7 +27,7 @@ const arrivals = [
     title: 'Office Desk',
     name: 'ErgoPro Desk',
     price: 499,
-    image: product3,
+    image: 'https://images.unsplash.com/photo-1616627458347-7b56b3c81a32?auto=format&fit=crop&w=800&q=80',
     isBestSeller: true,
     rating: 4.7,
   },
@@ -39,10 +36,11 @@ const arrivals = [
     title: 'Lounge Table',
     name: 'RelaxWood Table',
     price: 199,
-    image: product4,
+    image: 'https://images.unsplash.com/photo-1616627458562-6171a7dc2f34?auto=format&fit=crop&w=800&q=80',
     rating: 4.3,
   },
 ];
+;
 
 const NewArrivals = () => {
   const [cart, setCart] = useState([]);

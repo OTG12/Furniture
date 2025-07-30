@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiShoppingCart, FiHeart, FiEye, FiStar } from "react-icons/fi";
-import product1 from "../assets/product1.png";
-import product2 from "../assets/product2.png";
-import product3 from "../assets/product3.png";
-import product4 from "../assets/product4.png";
 
 const products = [
   {
@@ -12,7 +8,7 @@ const products = [
     name: "Modern Wooden Chair",
     price: 45000,
     originalPrice: 55000,
-    image: product1,
+    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     rating: 4.5,
     reviews: 24,
     isNew: true,
@@ -25,7 +21,7 @@ const products = [
     name: "Luxury Sofa Set",
     price: 250000,
     originalPrice: 300000,
-    image: product2,
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     rating: 4.8,
     reviews: 42,
     isBestSeller: true,
@@ -37,7 +33,7 @@ const products = [
     id: 3,
     name: "Glass Coffee Table",
     price: 70000,
-    image: product3,
+    image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     rating: 4.2,
     reviews: 18,
     colors: ["#C0C0C0", "#000000"], // Silver/black
@@ -49,7 +45,7 @@ const products = [
     name: "Premium Office Desk",
     price: 95000,
     originalPrice: 120000,
-    image: product4,
+    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     rating: 4.7,
     reviews: 31,
     isNew: true,
