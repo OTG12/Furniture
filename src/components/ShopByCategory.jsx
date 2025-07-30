@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import livingRoomImg from "../assets/living-room.jpeg";
-import bedroomImg from "../assets/bedroom.jpeg";
-import officeImg from "../assets/office.jpeg";
-import diningImg from "../assets/dining.jpeg";
+import livingRoomImg from "../assets/living-room.png";
+import bedroomImg from "../assets/bedroom.png";
+import officeImg from "../assets/office.png";
+import diningImg from "../assets/dining.png";
 
 const categories = [
   {
