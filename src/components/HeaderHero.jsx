@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Logo from '../assets/logo.png';
 import Hero from '../assets/Hero.png';
 import { ShoppingCart, User, Menu, X, ChevronRight } from "lucide-react";
 
 const HeaderHero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [cartItemsCount, setCartItemsCount] = useState(3); // Example cart count
+  const [cartItemsCount, setCartItemsCount] = useState(3); // You can replace this with dynamic value
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -38,18 +35,26 @@ const HeaderHero = () => {
   return (
     <div className="w-full bg-white text-gray-900">
       {/* Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-yellow-700 shadow-lg py-3' : 'bg-yellow-600 py-4'
-      }`}>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-yellow-700 shadow-lg py-3' : 'bg-yellow-600 py-4'
+        }`}
+      >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="text-2xl font-bold text-white">GC Furniture</div>
-          
+          <Link to="/" className="flex items-center h-16">
+            <img
+              src={Logo}
+              alt="OTxpress logo"
+              className="h-30 w-auto object-contain"
+            />
+          </Link>
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a 
+              <a
                 key={link.name}
-                href={link.href} 
+                href={link.href}
                 className="text-white hover:text-red-300 transition-colors font-medium text-sm relative group"
               >
                 {link.name}
@@ -57,12 +62,13 @@ const HeaderHero = () => {
               </a>
             ))}
           </nav>
-          
+
+          {/* Icons */}
           <div className="flex items-center space-x-6">
             <button className="text-white hover:text-red-300 transition-colors">
               <User className="w-5 h-5" />
             </button>
-            <button 
+            <button
               onClick={handleCartClick}
               className="text-white hover:text-red-300 transition-colors relative p-1 hover:bg-white/10 rounded-full"
               aria-label={`Shopping Cart with ${cartItemsCount} items`}
@@ -74,9 +80,9 @@ const HeaderHero = () => {
                 </span>
               )}
             </button>
-            
-            {/* Mobile Menu Button */}
-            <button 
+
+            {/* Mobile Menu Toggle */}
+            <button
               className="md:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -84,7 +90,7 @@ const HeaderHero = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden bg-yellow-700 shadow-xl">
@@ -106,19 +112,18 @@ const HeaderHero = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 min-h-[90vh] flex items-center text-white">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 min-h-[90vh] flex items-center text-white">
         {/* Background Image */}
         <div className="absolute inset-0 overflow-hidden">
           <img
             src={Hero}
-            alt="GC Furniture Showroom"
+            alt="Modern furniture setup in showroom"
             className="w-full h-full object-cover"
           />
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent"></div>
         </div>
 
-        {/* Content */}
+        {/* Hero Content */}
         <div className="container mx-auto relative z-10">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
@@ -141,11 +146,11 @@ const HeaderHero = () => {
                 Custom Designs
               </a>
             </div>
-            
+
             <div className="mt-12 flex flex-wrap gap-6 items-center">
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
-                <span className="text-sm">Open: Mon-Sat (9am-6pm)</span>
+                <span className="text-sm">Open: Mon–Sat (9am–6pm)</span>
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-blue-400 rounded-full mr-2"></div>
@@ -160,6 +165,7 @@ const HeaderHero = () => {
 };
 
 export default HeaderHero;
+
 
 
 
